@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>21 Primaveras</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -33,7 +33,7 @@
     }
 
     .menu-title {
-      font-family: 'Dancing Script', cursive;
+      font-family: 'Pinyon Script', cursive;
       font-size: 2.4rem;
       color: #fff;
       text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.15);
@@ -95,7 +95,7 @@
     }
 
     .content h1 {
-      font-family: 'Dancing Script', cursive;
+      font-family: 'Pinyon Script', cursive;
       font-size: 3.5rem;
       color: #fff;
       background: rgba(255, 255, 255, 0.3);
@@ -107,7 +107,7 @@
 
     /* ── Dibujos: Sobres ── */
     .section-title {
-      font-family: 'Dancing Script', cursive;
+      font-family: 'Pinyon Script', cursive;
       font-size: 2.2rem;
       color: #fff;
       text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.15);
@@ -117,213 +117,3 @@
     .sobres-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 28px;
-      max-width: 900px;
-      width: 100%;
-    }
-
-    .sobre-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      cursor: pointer;
-      transition: transform 0.3s ease, filter 0.3s ease;
-    }
-
-    .sobre-item:hover {
-      transform: scale(1.08) rotate(-2deg);
-      filter: brightness(1.05);
-    }
-
-    .sobre-item .emoji {
-      font-size: 4rem;
-      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
-      line-height: 1;
-    }
-
-    .sobre-item span {
-      margin-top: 8px;
-      font-size: 0.85rem;
-      color: #fff;
-      font-weight: 600;
-      background: rgba(255, 255, 255, 0.3);
-      padding: 4px 14px;
-      border-radius: 12px;
-    }
-
-    /* ── Modal para dibujos ── */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(6px);
-      z-index: 200;
-      justify-content: center;
-      align-items: center;
-      animation: fadeIn 0.3s ease;
-    }
-
-    .modal-overlay.open {
-      display: flex;
-    }
-
-    .modal {
-      background: #fff;
-      border-radius: 20px;
-      padding: 40px;
-      max-width: 500px;
-      width: 90%;
-      text-align: center;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      position: relative;
-    }
-
-    .modal h2 {
-      font-family: 'Dancing Script', cursive;
-      font-size: 2rem;
-      color: #d4787a;
-      margin-bottom: 16px;
-    }
-
-    .modal p {
-      color: #888;
-      font-size: 0.95rem;
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 14px;
-      right: 18px;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      color: #ccc;
-      cursor: pointer;
-      transition: color 0.2s;
-    }
-
-    .modal-close:hover {
-      color: #d4787a;
-    }
-
-    .modal .dibujo-container {
-      width: 100%;
-      min-height: 200px;
-      background: #fdf2f2;
-      border-radius: 12px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 16px;
-      border: 2px dashed #f0b8b8;
-    }
-
-    .modal .dibujo-container span {
-      color: #d4787a;
-      font-size: 0.9rem;
-    }
-  </style>
-</head>
-<body>
-
-  <nav class="menu">
-    <span class="menu-title">Feliz Cumpleaños</span>
-    <ul class="menu-options">
-      <li><a href="#" data-section="home" class="active">Inicio</a></li>
-      <li><a href="#" data-section="dibujos">Dibujos</a></li>
-      <li><a href="#" data-section="carta">Carta</a></li>
-      <li><a href="#" data-section="te-amo">Te amo</a></li>
-    </ul>
-  </nav>
-
-  <!-- Home -->
-  <section id="home" class="section active">
-    <div class="content">
-      <h1>Hola Inés, te amo</h1>
-    </div>
-  </section>
-
-  <!-- Dibujos -->
-  <section id="dibujos" class="section">
-    <h2 class="section-title">Abre cada sobre y descubre un dibujo 💌</h2>
-    <div class="sobres-grid" id="sobresGrid"></div>
-  </section>
-
-  <!-- Carta -->
-  <section id="carta" class="section">
-    <div class="content">
-      <h1>Carta</h1>
-    </div>
-  </section>
-
-  <!-- Te amo -->
-  <section id="te-amo" class="section">
-    <div class="content">
-      <h1>Te amo</h1>
-    </div>
-  </section>
-
-  <!-- Modal -->
-  <div class="modal-overlay" id="modalOverlay">
-    <div class="modal">
-      <button class="modal-close" id="modalClose">&times;</button>
-      <h2 id="modalTitle">Sobre #1</h2>
-      <div class="dibujo-container">
-        <span>Próximamente: aquí irá tu dibujo ✨</span>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // ── Navegación entre secciones ──
-    const links = document.querySelectorAll('.menu-options a');
-    const sections = document.querySelectorAll('.section');
-
-    links.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const target = link.dataset.section;
-
-        links.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-
-        sections.forEach(s => {
-          s.classList.remove('active');
-          if (s.id === target) s.classList.add('active');
-        });
-      });
-    });
-
-    // ── Generar 21 sobres ──
-    const grid = document.getElementById('sobresGrid');
-    for (let i = 1; i <= 21; i++) {
-      const item = document.createElement('div');
-      item.classList.add('sobre-item');
-      item.innerHTML = `
-        <span class="emoji">✉️</span>
-        <span>Sobre ${i}</span>
-      `;
-      item.addEventListener('click', () => openModal(i));
-      grid.appendChild(item);
-    }
-
-    // ── Modal ──
-    const overlay = document.getElementById('modalOverlay');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalClose = document.getElementById('modalClose');
-
-    function openModal(num) {
-      modalTitle.textContent = `Sobre #${num}`;
-      overlay.classList.add('open');
-    }
-
-    modalClose.addEventListener('click', () => overlay.classList.remove('open'));
-    overlay.addEventListener('click', (e) => {
-      if (e.target === overlay) overlay.classList.remove('open');
-    });
-  </script>
-
-</body>
-</html>
-
